@@ -3,7 +3,7 @@ import { NavLinkItem } from "../NavBarItem";
 
 export const Navbar = () => {
   return (
-    <header className="w-full h-auto flex flex-col">
+    <header className="flex flex-col m-5">
       <nav>
         <div className=" flex flex-row items-center justify-between">
           <h1 className="font-bold text-3xl text-green-700/60">

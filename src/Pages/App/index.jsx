@@ -6,17 +6,23 @@ import { MyOrders } from "../MyOrders";
 import { NotFound } from "../NotFound";
 import { SignIn } from "../SignIn";
 import { Navbar } from "../../Components/NavBar";
+import { Layout } from "../../Components/Layout";
 
 import "./App.css";
 
 const AppRoutes = () => {
   let routers = useRoutes([
-    { path: "/", element: <Home /> },
-    { path: "/account", element: <MyAccount /> },
-    { path: "/my-order", element: <MyOrder /> },
-    { path: "/my-orders", element: <MyOrders /> },
-    { path: "/sign-in", element: <SignIn /> },
-    { path: "/*", element: <NotFound /> },
+    {
+      element: <Layout />,
+      children: [
+        { path: "/", element: <Home /> },
+        { path: "/account", element: <MyAccount /> },
+        { path: "/my-order", element: <MyOrder /> },
+        { path: "/my-orders", element: <MyOrders /> },
+        { path: "/sign-in", element: <SignIn /> },
+        { path: "/*", element: <NotFound /> },
+      ],
+    },
   ]);
 
   return routers;
@@ -26,7 +32,6 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
-      <Navbar />
     </BrowserRouter>
   );
 }
