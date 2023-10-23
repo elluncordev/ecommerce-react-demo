@@ -5,7 +5,7 @@ export const Layout = () => {
   return (
     <>
       <Navbar />
-      <main className="flex flex-col m-5">
+      <main className="flex flex-col m-5 items-center">
         <Page />
       </main>
     </>

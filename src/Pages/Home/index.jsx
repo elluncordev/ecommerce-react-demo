@@ -1,3 +1,5 @@
+import { CardProduct } from "../../Components/CardProdut";
+
 export function Home() {
-  return <div>Home</div>;
+  return <div>{<CardProduct />}</div>;
 }
