@@ -1,7 +1,17 @@
-import { createContext } from "react";
+import { useState, createContext } from "react";
 
-const ShoppingContext = createContext();
+export const ShoppingContext = createContext();
 
 export const ShoppingContextProvider = ({ children }) => {
-  return <ShoppingContext.Provider>{children}</ShoppingContext.Provider>;
+  const [countProduct, setCountProuduct] = useState(0);
+  return (
+    <ShoppingContext.Provider
+      value={{
+        countProduct,
+        setCountProuduct,
+      }}
+    >
+      {children}
+    </ShoppingContext.Provider>
+  );
 };

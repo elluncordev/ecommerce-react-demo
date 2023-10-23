@@ -1,12 +1,18 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { ShoppingContext } from "../../Context";
 import { NavLinkItem } from "../NavBarItem";
+import { ShoppingBagSvg } from "../../assets/ShoppingBagSvg.jsx";
+import { UserAccountSvg } from "../../assets/UserAccountSvg.jsx";
 
 export const Navbar = () => {
+  const { countProduct } = useContext(ShoppingContext);
   return (
     <header className="flex flex-col m-5">
       <nav>
         <div className=" flex flex-row items-center justify-between">
-          <h1 className="font-bold text-3xl text-green-700/60">
+          <h1 className="font-bold text-3xl text-green-600">
             <Link to="/">TECNO SHOPI</Link>
           </h1>
           <input
@@ -14,15 +20,19 @@ export const Navbar = () => {
             type="text"
             placeholder="Search products"
           />
-          <ul className="flex flex-row gap-2">
-            <li>
-              <NavLinkItem to="/oders">Carrito</NavLinkItem>
+          <ul className="flex flex-row gap-5 items-center">
+            <li className="relative">
+              <span className="absolute w-5 h-5 text-xs -top-2 -right-3 bg-orange-300 p-1 rounded-full flex items-center justify-center">
+                {countProduct}
+              </span>
+              <NavLinkItem to="/oders">
+                <ShoppingBagSvg />
+              </NavLinkItem>
             </li>
             <li>
-              <NavLinkItem to="/sign-in">Sign In</NavLinkItem>
-            </li>
-            <li>
-              <NavLinkItem to="/account">Account</NavLinkItem>
+              <NavLinkItem to="/account">
+                <UserAccountSvg />
+              </NavLinkItem>
             </li>
           </ul>
         </div>

@@ -1,9 +1,18 @@
+import { useContext } from "react";
+
+import { ShoppingContext } from "../../Context";
+import { AddProductSvg } from "../../assets/AddProductSvg.jsx";
+
 export const CardProduct = ({ data }) => {
+  const { setCountProuduct } = useContext(ShoppingContext);
   return (
-    <article className="cursor-pointer w-56 h-60 rounded-md overflow-hidden">
+    <article className="cursor-pointer w-56 h-60 rounded-md overflow-hidden select-none">
       <figure className="relative mb-2 w-full h-3/4">
-        <span className="absolute top-2 right-2 flex justify-center items-center">
-          +
+        <span
+          onClick={() => setCountProuduct((countProduct) => countProduct + 1)}
+          className="absolute w-5 h-5 top-2 right-1 bg-white rounded-full flex justify-center items-center z-10"
+        >
+          <AddProductSvg />
         </span>
         <img
           className="w-full h-full object-cover"
