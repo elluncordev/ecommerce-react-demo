@@ -8,6 +8,7 @@ export function Home() {
   useEffect(() => {
     getProduct().then((newProduct) => setProducts(newProduct));
   }, []);
+
   return (
     <section className="grid gap-4 grid-cols-4 w-full max-w-screen-lg col-span-2 ">
       {products?.map((product) => (

@@ -20,9 +20,9 @@ export const Navbar = () => {
             type="text"
             placeholder="Search products"
           />
-          <ul className="flex flex-row gap-5 items-center">
+          <ul className="flex flex-row gap-7 items-center">
             <li className="relative">
-              <span className="absolute w-5 h-5 text-xs -top-2 -right-3 bg-orange-300 p-1 rounded-full flex items-center justify-center">
+              <span className="absolute w-5 h-5 text-xs -top-2 -right-4 bg-orange-300 p-1 rounded-full flex items-center justify-center">
                 {countProduct}
               </span>
               <NavLinkItem to="/oders">
