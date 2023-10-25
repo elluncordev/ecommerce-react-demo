@@ -19,7 +19,12 @@ export const ShoppingContextProvider = ({ children }) => {
     setCountProuduct((countProduct) => countProduct + 1);
     setProductToShow(productData);
     setProductsToCard([...productsToCard, productData]);
-    console.log(productsToCard);
+  };
+
+  const handleDeleteProduct = (id) => {
+    const newCartProduct = productsToCard.filter((product) => product.id != id);
+    setCountProuduct((countProduct) => countProduct - 1);
+    setProductsToCard(newCartProduct);
   };
 
   const openCheckoutCart = () => {
@@ -37,6 +42,7 @@ export const ShoppingContextProvider = ({ children }) => {
         addProductsToCard,
         isCheckoutCartOpen,
         openCheckoutCart,
+        handleDeleteProduct,
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ShoppingContext } from "../../context";
 import { NavLinkItem } from "../NavBarItem";
 import { CheckoutCart } from "../CheckoutCart";
-import { ShoppingBagSvg, UserAccountSvg } from "../../assets/Icons";
+import { ShoppingBanIcon, UserIcon } from "../../assets/Icons";
 
 export const Navbar = () => {
   const { countProduct, openCheckoutCart } = useContext(ShoppingContext);
@@ -24,11 +24,11 @@ export const Navbar = () => {
               <span className="absolute w-5 h-5 text-xs -top-2 -right-4 bg-orange-300 p-1 rounded-full flex items-center justify-center">
                 {countProduct}
               </span>
-              <ShoppingBagSvg />
+              <ShoppingBanIcon />
             </li>
             <li>
               <NavLinkItem to="/account">
-                <UserAccountSvg />
+                <UserIcon />
               </NavLinkItem>
             </li>
           </ul>

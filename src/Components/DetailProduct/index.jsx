@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ShoppingContext } from "../../context";
-import { ShoppingBagSvg } from "../../assets/Icons";
+import { ShoppingBanIcon } from "../../assets/Icons";
 
 export const DetailProduct = () => {
   const { productToShow, addProductsToCard } = useContext(ShoppingContext);
@@ -37,7 +37,7 @@ export const DetailProduct = () => {
           className="bg-gray-950 hover:bg-gray-800 w-full h-10 flex justify-center items-center gap-4 rounded-lg text-white text-ms"
           type="button"
         >
-          {<ShoppingBagSvg white />} Add to cart
+          {<ShoppingBanIcon white />} Add to cart
         </button>
       </div>
     </article>

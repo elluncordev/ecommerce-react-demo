@@ -1,4 +1,4 @@
-export const AddProductSvg = () => {
+export const AddIcon = () => {
   return (
     <svg
       className="w-3 h-3 text-gray-800"
@@ -19,7 +19,7 @@ export const AddProductSvg = () => {
   );
 };
 
-export const ShoppingBagSvg = ({ white }) => {
+export const ShoppingBanIcon = ({ white }) => {
   const isWhite = white ? "w-4 h-4 fill-white" : "w-5 h-5 fill-gray-800";
   return (
     <svg
@@ -40,7 +40,7 @@ export const ShoppingBagSvg = ({ white }) => {
   );
 };
 
-export const UserAccountSvg = () => {
+export const UserIcon = () => {
   return (
     <svg
       className="w-6 h-6 stroke-gray-800"
@@ -75,7 +75,7 @@ export const UserAccountSvg = () => {
   );
 };
 
-export const TrashProduct = () => {
+export const TrashIcon = () => {
   return (
     <svg
       className="w-4 h-4 stroke-gray-800 group-hover:stroke-white"
@@ -97,7 +97,7 @@ export const TrashProduct = () => {
   );
 };
 
-export const Close = () => {
+export const CloseIcon = () => {
   return (
     <svg
       className="w-4 h-4 cursor-pointer"
@@ -112,6 +112,27 @@ export const Close = () => {
         strokeWidth="2"
         d="M6 18L18 6M6 6l12 12"
       />
+    </svg>
+  );
+};
+
+export const CheckIcon = () => {
+  return (
+    <svg
+      className="w-3 h-3 text-gray-800"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      color="#000000"
+    >
+      <path
+        stroke="#000000"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m5 13 4 4L19 7"
+      ></path>
     </svg>
   );
 };
