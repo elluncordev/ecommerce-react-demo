@@ -1,16 +1,11 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
-import { ShoppingContext } from "../../Context";
-import { AddProductSvg } from "../../assets/AddProductSvg.jsx";
+import { ShoppingContext } from "../../context";
+import { AddProductSvg } from "../../assets/Icons";
 
 export const CardProduct = ({ data }) => {
-  const { setCountProuduct, setProductToShow } = useContext(ShoppingContext);
-
-  const saveProduct = (product) => {
-    setCountProuduct((countProduct) => countProduct + 1);
-    setProductToShow(product);
-  };
+  const { setProductToShow, addProductsToCard } = useContext(ShoppingContext);
 
   return (
     <article
@@ -18,7 +13,7 @@ export const CardProduct = ({ data }) => {
       className="cursor-pointer w-56 h-60 rounded-md overflow-hidden select-none relative"
     >
       <span
-        onClick={() => saveProduct(data)}
+        onClick={() => addProductsToCard(data)}
         className="absolute w-5 h-5 top-2 right-1 bg-white rounded-full flex justify-center items-center z-10"
       >
         <AddProductSvg />

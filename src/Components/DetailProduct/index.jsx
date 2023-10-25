@@ -1,16 +1,9 @@
 import { useContext } from "react";
-import { ShoppingContext } from "../../Context";
-
-import { ShoppingBagSvg } from "../../assets/ShoppingBagSvg";
+import { ShoppingContext } from "../../context";
+import { ShoppingBagSvg } from "../../assets/Icons";
 
 export const DetailProduct = () => {
-  const { productToShow, setProductToShow, setCountProuduct } =
-    useContext(ShoppingContext);
-
-  const saveProduct = (product) => {
-    setCountProuduct((countProduct) => countProduct + 1);
-    setProductToShow(product);
-  };
+  const { productToShow, addProductsToCard } = useContext(ShoppingContext);
 
   return (
     <article className="w-full h-auto flex flex-row gap-4">
@@ -38,8 +31,9 @@ export const DetailProduct = () => {
         <p className="text-2xl">$ {productToShow.price}</p>
         <p>{productToShow.description}</p>
         <button
-          onClick={() => saveProduct(productToShow)}
+          onClick={() => addProductsToCard(productToShow)}
           className="bg-gray-950 hover:bg-gray-800 w-full h-10 flex justify-center items-center gap-4 rounded-lg text-white text-ms"
+          type="button"
         >
           {<ShoppingBagSvg white />} Add to cart
         </button>

@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
-import { getProduct } from "../../services/fakestore.js";
+import { useContext } from "react";
+import { ShoppingContext } from "../../Context";
 import { CardProduct } from "../../Components/CardProdut";
 
 export function Home() {
-  const [products, setProducts] = useState(null);
-
-  useEffect(() => {
-    getProduct().then((newProduct) => setProducts(newProduct));
-  }, []);
+  const { products } = useContext(ShoppingContext);
 
   return (
     <section className="grid gap-4 grid-cols-4 w-full max-w-screen-lg col-span-2 ">
