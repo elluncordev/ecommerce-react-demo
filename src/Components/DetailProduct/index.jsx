@@ -12,12 +12,14 @@ export const DetailProduct = () => {
           {productToShow.images.map((image, imageIndex) =>
             imageIndex === 0 ? (
               <img
+                key={imageIndex}
                 className="w-full h-80 rounded-xl col-span-4 object-cover"
                 src={image}
                 alt={productToShow.title}
               />
             ) : (
               <img
+                key={imageIndex}
                 className="w-40 h-24 rounded-lg object-cover overflow-hidden"
                 src={image}
                 alt={productToShow.title}

@@ -6,8 +6,8 @@ import { Product } from "../Product";
 import { MyOrders } from "../MyOrders";
 import { NotFound } from "../NotFound";
 import { SignIn } from "../SignIn";
-import { Layout } from "../../Components/Layout";
-import { ShoppingContextProvider } from "../../Context";
+import { Layout } from "../../components/Layout";
+import { ShoppingContextProvider } from "../../context";
 
 import "./App.css";
 

@@ -14,7 +14,7 @@ export const CardProduct = ({ data }) => {
     >
       <span
         onClick={() => addProductsToCard(data)}
-        className="absolute w-5 h-5 top-2 right-1 bg-white rounded-full flex justify-center items-center z-10"
+        className="absolute w-5 h-5 top-2 right-2 bg-white rounded-full flex justify-center items-center z-10"
       >
         <AddProductSvg />
       </span>

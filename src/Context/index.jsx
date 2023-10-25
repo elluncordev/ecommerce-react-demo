@@ -6,8 +6,10 @@ export const ShoppingContext = createContext();
 export const ShoppingContextProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
   const [countProduct, setCountProuduct] = useState(0);
+
   const [productToShow, setProductToShow] = useState({});
   const [productsToCard, setProductsToCard] = useState([]);
+  const [isCheckoutCartOpen, setIsCheckoutCartOpen] = useState(false);
 
   useEffect(() => {
     getProduct().then((newProduct) => setProducts(newProduct));
@@ -20,14 +22,21 @@ export const ShoppingContextProvider = ({ children }) => {
     console.log(productsToCard);
   };
 
+  const openCheckoutCart = () => {
+    setIsCheckoutCartOpen(!isCheckoutCartOpen);
+  };
+
   return (
     <ShoppingContext.Provider
       value={{
         products,
         countProduct,
         productToShow,
+        productsToCard,
         setProductToShow,
         addProductsToCard,
+        isCheckoutCartOpen,
+        openCheckoutCart,
       }}
     >
       {children}
