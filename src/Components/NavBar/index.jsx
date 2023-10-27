@@ -3,23 +3,28 @@ import { Link } from "react-router-dom";
 import { ShoppingContext } from "../../context";
 import { NavLinkItem } from "../NavBarItem";
 import { CheckoutCart } from "../CheckoutCart";
-import { ShoppingBanIcon, UserIcon } from "../../assets/Icons";
+import { ShoppingBanIcon, UserIcon, SearchIcon } from "../../assets/Icons";
 
 export const Navbar = () => {
-  const { countProduct, openCheckoutCart } = useContext(ShoppingContext);
+  const { countProduct, openCheckoutCart, handleSearchProduct } =
+    useContext(ShoppingContext);
   return (
     <header className="flex flex-col m-5">
       <nav>
         <div className=" flex flex-row items-center justify-between">
-          <h1 className="font-bold text-3xl text-green-600">
-            <Link to="/">TECNO SHOPI</Link>
+          <h1 className="font-bebas font-bold text-4xl text-black">
+            <Link to="/">Random Shop</Link>
           </h1>
-          <input
-            className="w-80 h-10 outline-0 border-none px-4 py-2 rounded-full bg-gray-100 drop-shadow"
-            type="text"
-            placeholder="Search products"
-          />
-          <ul className="flex flex-row gap-7 items-center cursor-pointer">
+          <div className="w-80 h-10 flex gap-2 items-center bg-gray-100 px-2">
+            <SearchIcon />
+            <input
+              onChange={(event) => handleSearchProduct(event.target.value)}
+              className="w-full h-full outline-0 border-none bg-gray-100 "
+              type="text"
+              placeholder="Search products"
+            />
+          </div>
+          <ul className="flex flex-row gap-7 items-center cursor-pointer select-none">
             <li onClick={openCheckoutCart} className="relative">
               <span className="absolute w-5 h-5 text-xs -top-2 -right-4 bg-orange-300 p-1 rounded-full flex items-center justify-center">
                 {countProduct}

@@ -11,9 +11,19 @@ export const ShoppingContextProvider = ({ children }) => {
   const [productsToCard, setProductsToCard] = useState([]);
   const [isCheckoutCartOpen, setIsCheckoutCartOpen] = useState(false);
 
+  const [searchByProduct, setSearchByProduct] = useState("");
+  const [filterProducts, setFilterProducts] = useState([]);
+
   useEffect(() => {
     getProduct().then((newProduct) => setProducts(newProduct));
   }, []);
+
+  useEffect(() => {
+    if (searchByProduct)
+      setFilterProducts(filteredProductsByTittle(products, searchByProduct));
+  }, [products, searchByProduct]);
+
+  console.log(filterProducts);
 
   const addProductsToCard = (productData) => {
     setCountProuduct((countProduct) => countProduct + 1);
@@ -31,6 +41,16 @@ export const ShoppingContextProvider = ({ children }) => {
     setIsCheckoutCartOpen(!isCheckoutCartOpen);
   };
 
+  const handleSearchProduct = (searchProduct) => {
+    setSearchByProduct(searchProduct);
+  };
+
+  const filteredProductsByTittle = (products, filterProducts) => {
+    return products?.filter((product) =>
+      product.title.toLowerCase().includes(filterProducts.toLowerCase())
+    );
+  };
+
   return (
     <ShoppingContext.Provider
       value={{
@@ -43,6 +63,8 @@ export const ShoppingContextProvider = ({ children }) => {
         isCheckoutCartOpen,
         openCheckoutCart,
         handleDeleteProduct,
+        handleSearchProduct,
+        filterProducts,
       }}
     >
       {children}

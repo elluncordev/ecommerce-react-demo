@@ -29,12 +29,12 @@ export const DetailProduct = () => {
         </figure>
       </header>
       <div className="w-1/2  m-4 flex flex-col gap-12">
-        <h2 className="font-bold text-4xl">{productToShow.title}</h2>
+        <h2 className="font-bebas font-bold text-5xl">{productToShow.title}</h2>
         <p className="text-2xl">$ {productToShow.price}</p>
         <p>{productToShow.description}</p>
         <button
           onClick={() => addProductsToCard(productToShow)}
-          className="bg-gray-950 hover:bg-gray-800 w-full h-10 flex justify-center items-center gap-4 rounded-lg text-white text-ms"
+          className="font-bebas text-xl bg-gray-950 hover:bg-gray-800 w-full h-10 flex justify-center items-center gap-4 rounded-lg text-white"
           type="button"
         >
           {<ShoppingBanIcon white />} Add to cart

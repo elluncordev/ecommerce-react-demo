@@ -8,10 +8,7 @@ export const CheckoutCartItem = ({
   handleDeleteProduct,
 }) => {
   return (
-    <article
-      key={id}
-      className="flex w-full h-14 flex-row overflow-clip items-center justify-between gap-1 border-slate-300 border-[1px] p-1"
-    >
+    <article className="flex w-full h-14 flex-row overflow-clip items-center justify-between gap-1 border-gray-100 border-[1px] p-1">
       <img
         className="flex-none w-14 h-12 overflow-hidden object-center object-cover "
         src={images}

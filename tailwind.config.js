@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "Arial", "sans-serif"],
+        bebas: ["Bebas Neue", "sans-serif"],
       },
     },
   },

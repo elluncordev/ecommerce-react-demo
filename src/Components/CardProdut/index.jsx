@@ -33,7 +33,7 @@ export const CardProduct = ({ data }) => {
   return (
     <article
       onClick={() => setProductToShow(data)}
-      className="cursor-pointer w-56 h-60 rounded-md overflow-hidden select-none relative"
+      className="relative cursor-pointer w-52 h-56 rounded-md overflow-hidden select-none"
     >
       {renderIcon(data.id)}
       <NavLink to={`/product/${data.id}`}>

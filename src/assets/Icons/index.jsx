@@ -24,11 +24,8 @@ export const ShoppingBanIcon = ({ white }) => {
   return (
     <svg
       className={isWhite}
-      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      width="20"
-      height="20"
     >
       <path
         strokeLinecap="round"
@@ -122,7 +119,7 @@ export const CheckIcon = () => {
       className="w-3 h-3 text-gray-800"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke-width="2"
+      strokeWidth="2"
       viewBox="0 0 24 24"
       color="#000000"
     >
@@ -131,7 +128,33 @@ export const CheckIcon = () => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
-        d="m5 13 4 4L19 7"
+        d="m20 14.5-.74-4.804A2 2 0 0 0 17.285 8H6.716a2 2 0 0 0-1.977 1.696l-1.385 9A2 2 0 0 0 5.331 21H12"
+      ></path>
+      <path
+        stroke="#000000"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m14 19 3 3 5-5M14 5a2 2 0 1 0-4 0"
+      ></path>
+    </svg>
+  );
+};
+
+export const SearchIcon = () => {
+  return (
+    <svg
+      className="w-4 h-4 stroke-gray-400"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="3"
+        d="m17 17 4 4M3 11a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z"
       ></path>
     </svg>
   );

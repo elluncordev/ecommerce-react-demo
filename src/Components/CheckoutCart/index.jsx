@@ -17,19 +17,19 @@ export const CheckoutCart = () => {
       className={`${
         isCheckoutCartOpen ? "grid" : "hidden"
       } scrollBar bg-white absolute w-80 h-auto 
-      max-h-96  grid-cols-1 gap-3 right-4 p-2 border-slate-900 
-      border-[1px] z-30 overflow-auto`}
+      max-h-96 grid-cols-1 gap-3 right-3 p-2
+       z-30 overflow-auto shadow-lg shadow-gray-200/75`}
     >
       {productsToCard?.length == 0 && (
-        <p className="font-bold flex justify-center p-1">
-          EL CARRITO ESTA VACIO
+        <p className="font-bebas text-xl flex justify-center items-center select-none">
+          EL CARRITO ESTÁ VACÍO
         </p>
       )}
 
       {productsToCard?.length > 0 && (
         <>
-          <div className="flex flex-row justify-between items-center">
-            <h3 className="font-bold">Detail</h3>
+          <div className="flex flex-row flex-1 justify-between items-center">
+            <h3 className="font-bebas text-xl font-bold">Detail</h3>
             <div onClick={openCheckoutCart}>
               <CloseIcon />
             </div>
@@ -37,6 +37,7 @@ export const CheckoutCart = () => {
 
           {productsToCard.map((product) => (
             <CheckoutCartItem
+              key={product.id}
               id={product.id}
               title={product.title}
               price={product.price}
@@ -47,7 +48,7 @@ export const CheckoutCart = () => {
 
           <button
             type="button"
-            className="w-full h-8 bg-black text-white cursor-pointer"
+            className="font-bebas text-xl w-full h-10 bg-black text-white cursor-pointer"
           >
             Ir al checkout
           </button>
